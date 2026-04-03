@@ -1,9 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
+
+// 引入App.jsx
 import "./assets/style.css";
 
 // API 設定
-//// 很重要的重點.env要放在最外層資料夾 ，可以用這行確認有沒有抓到console.log("API_BASE:", API_BASE);
+// //很重要的重點.env要放在最外層資料夾 ，可以用這行確認有沒有抓到console.log("API_BASE:", API_BASE);
 const API_BASE = import.meta.env.VITE_API_BASE;
 const API_PATH = import.meta.env.VITE_API_PATH;
 //記得改成className
