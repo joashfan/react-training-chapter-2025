@@ -1,18 +1,12 @@
-/* 設定主圖的比例，避免圖片變形 */
+img {
+  object-fit: contain;
+  max-width: 100%;
+}
+
 .primary-image {
-  height: 350px;
-  object-fit: cover;
-  width: 100%;
+  height: 300px;
 }
 
-/* 設定下方縮圖的比例 */
-.img-thumbnail {
-  height: 100px;
-  width: 100px;
-  object-fit: cover;
-}
-
-/* 美化表格的垂直置中 */
-.table td, .table th {
-  vertical-align: middle;
-}
+.images {
+  height: 150px;
+  margin-right: 5px; /* 加點邊距 */
