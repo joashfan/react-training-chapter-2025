@@ -4,7 +4,7 @@ import axios from "axios";
 import * as bootstrap from "bootstrap";
 import ProductModal from "./component/ProductModal";
 import Pagination from "./component/Pagination";
-
+import Login from "./views/Login";
 import "./assets/style.css";
 
 const API_BASE = "https://ec-course-api.hexschool.io/v2";
