@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import * as bootstrap from "bootstrap";
+import Swal from "sweetalert2";
+
 import "./assets/style.css";
 
 const API_BASE = "https://ec-course-api.hexschool.io/v2";
