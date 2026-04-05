@@ -68,11 +68,11 @@ function App() {
 
       if (
         value === "" &&
-        index === newImage[newImage.length - 1 === ""] &&
+        index === newImage.length - 1 && // 改成這樣！判斷是不是最後一個框框
         newImage.length > 1
       ) {
         newImage.pop();
-      }
+        }
       return {
         ...pre,
         imagesUrl: newImage,
@@ -227,7 +227,8 @@ function App() {
         imageUrl: response.data.imageUrl,
       }));
     } catch (error) {
-      alert.error("Upload error:", error);
+    alert("圖片上傳失敗");
+    console.error(error);
     }
   };
 
