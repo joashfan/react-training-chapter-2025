@@ -1,46 +1,41 @@
-function Pagination({ pagination, changePage }) {
-  const handleClick = (event, page) => {
-    event.preventDefault();
-    changePage(page);
+function Pagination({ pagination, onChangePage }) {
+  const handleClick = (e, page) => {
+    e.preventDefault();
+    onChangePage(page);
   };
-
   return (
     <nav aria-label="Page navigation example">
-      <ul className="pagination">
-        <li className="page-item">
+      <ul className="pagination justify-content-center">
+        <li className={`page-item ${!pagination.has_pre && "disabled"}`}>
           <a
-            href="/"
+            className="page-link"
+            href="#"
             aria-label="Previous"
-            className={`page-link ${pagination.has_pre ? '' : 'disabled'}`}
-            onClick={(event) => handleClick(event, pagination.current_page - 1)}
+            onClick={(e) => handleClick(e, pagination.current_page - 1)}
           >
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
-        {[...new Array(pagination.total_pages)].map(
-          (
-            _,
-            i,
-          ) => (
-            <li className="page-item" key={`${i}_page`}>
-              <a
-                className={`page-link ${
-                  i + 1 === pagination.current_page && 'active'
-                }`}
-                href="/"
-                onClick={(event) => handleClick(event, i + 1)}
-              >
-                {i + 1}
-              </a>
-            </li>
-          ),
-        )}
-        <li className="page-item">
+        {Array.from({ length: pagination.total_pages }, (_, index) => (
+          <li
+            className={`page-item ${pagination.current_page === index + 1 && "active"}`}
+            key={`${index}`}
+          >
+            <a
+              className="page-link"
+              href="#"
+              onClick={(e) => handleClick(e, index + 1)}
+            >
+              {index + 1}
+            </a>
+          </li>
+        ))}
+        <li className={`page-item ${!pagination.has_next && "disabled"}`}>
           <a
-            className={`page-link ${pagination.has_next ? '' : 'disabled'}`}
-            onClick={(event) => handleClick(event, pagination.current_page + 1)}
-            href="/"
+            className="page-link"
+            href="#"
             aria-label="Next"
+            onClick={(e) => handleClick(e, pagination.current_page + 1)}
           >
             <span aria-hidden="true">&raquo;</span>
           </a>
@@ -49,6 +44,5 @@ function Pagination({ pagination, changePage }) {
     </nav>
   );
 }
-
 
 export default Pagination;
