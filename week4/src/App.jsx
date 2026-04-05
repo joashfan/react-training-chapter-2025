@@ -4,8 +4,8 @@ import * as bootstrap from "bootstrap";
 import "./assets/style.css";
 
 // 1. 引入抽離出去的組件
-import ProductModal from "./components/ProductModal.jsx";
-import Pagination from "./components/Pagination.jsx";
+import ProductModal from "./component/ProductModal.jsx";
+import Pagination from "./component/Pagination.jsx";
 
 const API_BASE = "https://ec-course-api.hexschool.io/v2";
 const API_PATH = "joashcat";
